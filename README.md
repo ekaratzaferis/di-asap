@@ -10,9 +10,9 @@ It's fairly simple to use.
 
 ## Installation
 
-### npm install easy-di
+### npm install di-asap
 
-https://www.npmjs.com/package/easy-di
+https://www.npmjs.com/package/di-asap
 
 ## API
 
@@ -28,22 +28,22 @@ Get some module that you have registered or declared as factory.
 
 ## Code Example
 
-Start of by requiring the easy-di module:
+Start of by requiring the di-asap module:
 
 ```javascript
-const queryBuilder = require('easy-di')
+const queryBuilder = require('di-asap')
 ```
 
 Then declare your modules:
 
 ```javascript
-easy_di.register('dependency', require('./dependency'))
-easy_di.factory('app', require('./needsInjection'))
+di_asap.register('dependency', require('./dependency'))
+di_asap.factory('app', require('./needsInjection'))
 ```
 
 Bootstrap your application
 ```javascript
-easy_di.get('app')()
+di_asap.get('app')()
 ````
 
 App is factory written as:

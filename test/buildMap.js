@@ -1,4 +1,4 @@
-const easy_di = require('../')
+const di_asap = require('../')
 module.exports = () => {
     /**
      * Start of by declaring your dependencies.
@@ -9,8 +9,8 @@ module.exports = () => {
      * Factories return a constructor, so in order to bootstrap our application,
      * we could simply 'get' the factory and invoke it.
      */
-    easy_di.register('dependency', require('./dependency'))
-    easy_di.factory('app', require('./needsInjection'))
+    di_asap.register('dependency', require('./dependency'))
+    di_asap.factory('app', require('./needsInjection'))
     // Bootstrap your application //
-    easy_di.get('app')()
+    di_asap.get('app')()
 }
