@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ekaratzaferis/easy-di.git"
+    "url": "git+https://github.com/ekaratzaferis/di-asap.git"
   },
   "keywords": [
     "dependency",
@@ -17,9 +17,9 @@
   "author": "Alex Karatzaferis",
   "license": "GPL-3.0",
   "bugs": {
-    "url": "https://github.com/ekaratzaferis/easy-di/issues"
+    "url": "https://github.com/ekaratzaferis/di-asap/issues"
   },
-  "homepage": "https://github.com/ekaratzaferis/easy-di#readme",
+  "homepage": "https://github.com/ekaratzaferis/di-asap#readme",
   "dependencies": {
     "parse-fn-args": "0.0.2"
   },
