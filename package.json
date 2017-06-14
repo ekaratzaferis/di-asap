@@ -1,0 +1,29 @@
+{
+  "name": "di-asap",
+  "version": "1.0.0",
+  "description": "An easy way to introduce dependecy injection to your project",
+  "main": "index.js",
+  "scripts": {
+    "test": "node test/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ekaratzaferis/easy-di.git"
+  },
+  "keywords": [
+    "dependency",
+    "injection"
+  ],
+  "author": "Alex Karatzaferis",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/ekaratzaferis/easy-di/issues"
+  },
+  "homepage": "https://github.com/ekaratzaferis/easy-di#readme",
+  "dependencies": {
+    "parse-fn-args": "0.0.2"
+  },
+  "devDependencies": {
+    "should": "8.2.2"
+  }
+}
