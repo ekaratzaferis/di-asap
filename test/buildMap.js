@@ -13,4 +13,5 @@ module.exports = () => {
     di_asap.factory('app', require('./needsInjection'))
     // Bootstrap your application //
     di_asap.get('app')()
+    di_asap.printTree()
 }
