@@ -31,7 +31,7 @@ Get some module that you have registered or declared as factory.
 Start of by requiring the di-asap module:
 
 ```javascript
-const queryBuilder = require('di-asap')
+const queryBuilder = require('di-asap')()
 ```
 
 Then declare your modules:
