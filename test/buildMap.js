@@ -1,4 +1,5 @@
-const di_asap = require('../')
+const di_asap = require('../')()
+const another_di_asap = require('../')()
 module.exports = () => {
     /**
      * Start of by declaring your dependencies.
@@ -14,4 +15,8 @@ module.exports = () => {
     // Bootstrap your application //
     di_asap.get('app')()
     di_asap.printTree()
+
+    // Creating new container that holds a different set of dependencies and factories //
+    another_di_asap.register('dependency', require('./dependency'))
+    another_di_asap.printTree()
 }
