@@ -1,12 +1,33 @@
-module.exports = () => {
-    var dependencies = {}
-    var factories = {}
+const registerModule = require('./methods/register')
+const requireModule = require('./methods/require')
+const buildIndex = require('./methods/build')
+
+module.exports = function () {
+    // Index stores the relative paths to the modules that will be using //
+    var index = {
+        withInjection: {},
+        withoutInjection: {}
+    }
+    /**
+     * Exposed methods:
+     * - register: allows the user to register to di-asap
+     * - require: allows the user to "require" a module from the index
+     * - buildIndex: requires all files in index and returns a container with every module
+     */
     return {
-        factory: require('./methods/factory')(factories),
-        register: require('./methods/register')(dependencies),
-        get: require('./methods/get')(dependencies, factories),
-        printTree: () => {
-            return require('./methods/printTree')(dependencies, factories)()
+        register: {
+            withInjection: function (moduleName, filename) {
+                index = registerModule.withInjection(index, moduleName, filename)
+            },
+            withoutInjection: function (moduleName, filename) {
+                index = registerModule.withoutInjection(index, moduleName, filename)
+            }
+        },
+        require: function (module) {
+            return requireModule(index, module)
+        },
+        build: function () {
+            return buildIndex(index)
         }
     }
 }
