@@ -6,7 +6,8 @@ module.exports = function () {
     // Index stores the relative paths to the modules that will be using //
     var index = {
         withInjection: {},
-        withoutInjection: {}
+        withoutInjection: {},
+        resolved: {}
     }
     /**
      * Exposed methods:
@@ -21,6 +22,9 @@ module.exports = function () {
             },
             withoutInjection: function (moduleName, filename) {
                 index = registerModule.withoutInjection(index, moduleName, filename)
+            },
+            resolved: function (moduleName, module) {
+                index = registerModule.resolved(index, moduleName, module)
             }
         },
         require: function (module) {

@@ -21,7 +21,7 @@ function attemptToRequire (fileName) {
         require.resolve(fileName)
         return require(fileName)
     } catch(e){
-        throw new Error(fileName + ' either points to a non existing path or isn\'t an installed NPM package.')
+        throw new Error(JSON.stringify(fileName) + ' either points to a non existing path or isn\'t an installed NPM package.')
     }
 }
 
@@ -35,7 +35,9 @@ function attemptToRequire (fileName) {
  * @returns {*}
  */
 function read (index, moduleName) {
-    if (index.withoutInjection[moduleName]) {
+    if (index.resolved[moduleName]) {
+        return index.resolved[moduleName]
+    } else if (index.withoutInjection[moduleName]) {
         return attemptToRequire(index.withoutInjection[moduleName])
     } else if (index.withInjection[moduleName]) {
         var factory = attemptToRequire(index.withInjection[moduleName])

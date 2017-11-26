@@ -13,5 +13,9 @@ module.exports = {
     withoutInjection: function (index, moduleName, filename) {
         index.withoutInjection[moduleName] = filename
         return index
+    },
+    resolved: function (index, moduleName, module) {
+        index.resolved[moduleName] = module
+        return index
     }
 }
